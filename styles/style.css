@@ -1,11 +1,22 @@
+
 * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
 }
 
+:root{
+ --big-font: 9.3rem;
+ --big-mid-font: 5.6rem;
+ --smal-font: 1rem;
+
+ 
+ /* ======= color ======= */
+ --active: aquamarine;
+}
+
 body {
- font-size: 23px;
+ font-size: var(--smal-font);
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  color: white;
  width: 100%;
@@ -15,12 +26,10 @@ body {
 
 .clock-container {
  /* width: 800px; */
- width: 100%;
+ min-width: 750px;
  background: linear-gradient(34deg, rgb(78, 80, 78), rgb(57, 57, 83), rgb(9, 9, 51), rgb(49, 99, 49));
  border: 5px solid black;
  border-radius: 20px;
- margin-top: 2%;
- margin-left: 2%;
  outline: 7px solid rgb(192, 192, 192);
  outline-style: outset;
 }
@@ -33,10 +42,10 @@ body {
  border-bottom-right-radius: 20px;
 }
 
-.section {
+/* .section {
  height: 100%;
  width: 100%;
-}
+} */
 
 .days-sct span {
  display: block;
@@ -44,7 +53,7 @@ body {
 }
 
 .active {
- color: aquamarine;
+ color: var(--active);
  font-weight: 600;
 }
 .clock-content {
@@ -54,7 +63,7 @@ body {
 }
 .clock-sct {
  display: flex;
- font-size: 150px;
+ font-size: var(--big-font);
  height: 100%;
  width: 100%;
  position: relative;
@@ -109,7 +118,7 @@ body {
  grid-template-rows: auto auto;
  align-items: center;
  justify-content: center;
- color: aquamarine;
+ color: var(--active);
  font-size: 40px;
 }
 .month-sct span {
@@ -149,7 +158,10 @@ body {
 }
 
 .stopwatch-sct {
+margin: 0 auto; 
+ font-size: 50px;
  display: none;
+ padding: .5rem 0;
 }
 
 @media (max-width: 966px) {
@@ -177,7 +189,9 @@ body {
  .clock-sct {
   order: 2;
  }
-
+.clock-container {
+ min-width: 360px;
+}
  .stopwatch-sct {
   order: 3;
  }

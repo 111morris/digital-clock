@@ -48,7 +48,7 @@ changeClockFormat.addEventListener('click', () => {
  stopwatch.textContent = 'Stopwatch';
  clockSct.style.display = 'flex';
  stopwatchSct.style.display = 'none';
- 
+
  if (twentyFourHours) {
   twentyFourHours = false;
   changeClockFormat.innerHTML = '24Hrs';
@@ -58,7 +58,7 @@ changeClockFormat.addEventListener('click', () => {
   changeClockFormat.innerHTML = '12Hrs';
   format.style.display = 'none';
  }
- 
+
 });
 
 
@@ -69,7 +69,7 @@ let startTime = 0;
 let elapsedTime = 0;
 let isRunning = false;
 
-function stopwatchContinueBtn(){
+function stopwatchContinueBtn() {
  stopwatchClicked = true;
  clockSct.style.display = 'none';
  stopwatchSct.style.display = 'flex';
@@ -103,7 +103,7 @@ function stopwatchContinueBtn(){
   startTime = 0;
   elapsedTime = 0;
   isRunning = false;
-  stopwatchSct.textContent = '00:00:00:00';
+  stopwatchSct.textContent = '00:00:00';
  }
  function start() {
   if (!isRunning) {
@@ -127,7 +127,12 @@ function stopwatchContinueBtn(){
   seconds = String(seconds).padStart(2, '0');
   miliseconds = String(miliseconds).padStart(2, '0');
 
-  stopwatchSct.textContent = `${hours}:${minutes}:${seconds}:${miliseconds}`;
+  // stopwatchSct.textContent = `${hours}:${minutes}:${seconds}:${miliseconds}`;
+  if (hours === '1') {
+   stopwatchSct.textContent = `${hours}:${minutes}:${seconds}:${miliseconds}`;
+  } else {
+   stopwatchSct.textContent = `${minutes}:${seconds}:${miliseconds}`;
+  }
  }
 }
 stopwatch.addEventListener('click', stopwatchContinueBtn);
@@ -135,5 +140,3 @@ stopwatch.addEventListener('click', stopwatchContinueBtn);
 stopwatchContinue.addEventListener('click', () => {
 });
 
-
-console.log(Date.now())
