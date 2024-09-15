@@ -1,0 +1,158 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-size: 23px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ color: white;
+}
+
+.clock-container {
+ width: 800px;
+ background: linear-gradient(34deg, rgb(78, 80, 78), rgb(57, 57, 83), rgb(9, 9, 51), rgb(49, 99, 49));
+ border: 5px solid black;
+ border-radius: 20px;
+ margin-top: 2%;
+ margin-left: 2%;
+ outline: 7px solid rgb(192, 192, 192);
+ outline-style: outset;
+}
+
+.container {
+ display: grid;
+ grid-template-columns: auto auto auto;
+ padding: 20px;
+ border-bottom-left-radius: 20px;
+ border-bottom-right-radius: 20px;
+}
+
+.section {
+ height: 100%;
+ width: 100%;
+}
+
+.days-sct span {
+ display: block;
+ user-select: none;
+}
+
+.active {
+ color: aquamarine;
+ font-weight: 600;
+}
+
+.clock-content {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.clock-sct {
+ display: flex;
+ font-size: 150px;
+ height: 100%;
+ width: 100%;
+ position: relative;
+ font-weight: 550;
+ align-items: center;
+ justify-content: center;
+}
+
+.clock-sct span {
+ user-select: none;
+}
+
+.format {
+ width: 30px;
+ height: 30px;
+ font-size: 17px;
+ position: absolute;
+ top: 30%;
+ left: -6px;
+ display: none;
+}
+
+.alarm-sct {
+ display: flex;
+ justify-content: space-between;
+}
+.stopwatch-continue,
+.stopwatch-btn,
+.change-clock-format,
+.set-alarm {
+ padding: 10px 20px;
+ border: 2px solid rgba(157, 212, 28, 0.849);
+ border-radius: 5px;
+ color: white;
+ background: brown;
+ font-size: 16px;
+ transition: background, scale ease .2s;
+ cursor: pointer;
+}
+.stopwatch-continue:hover,
+.stopwatch-btn:hover,
+.change-clock-format:hover,
+.set-alarm:hover {
+ background: rgba(165, 42, 42, .7);
+ scale: 1.05;
+}
+.stopwatch-continue{
+ display: none;
+}
+
+.month-sct {
+ display: grid;
+ grid-template-rows: auto auto;
+ align-items: center;
+ justify-content: center;
+ color: aquamarine;
+ font-size: 40px;
+}
+
+.month-sct span {
+ user-select: none;
+}
+
+.year {
+ justify-content: center;
+ align-items: center;
+ position: relative;
+}
+
+.year::after {
+ content: 'Yr';
+ font-size: 14px;
+ position: absolute;
+ bottom: 0;
+}
+
+.month-and-day {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.day,
+.month {
+ position: relative;
+}
+
+.day::after,
+.month::after {
+ content: 'M';
+ font-size: 16px;
+ bottom: 0;
+ position: absolute;
+}
+
+.day::after {
+ content: 'D';
+}
+
+.stopwatch-sct{
+ display: none;
+}
