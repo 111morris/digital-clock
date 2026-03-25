@@ -1,1 +1,3 @@
-# 
+## digital-clock
+
+A Lightweight digital clock that displays the current day, year, month and date synchronized with the device's local time settings Includes a fully functional stopwatch with intuitive controls, sea...
